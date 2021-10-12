@@ -169,7 +169,7 @@
             flex: 1;
             order: 3;
             position: absolute;
-            background-image: url('/images/icon-cross.svg');
+            background-image: url('../images/icon-cross.svg');
             background-repeat: no-repeat;
             margin-left: 18rem;
             margin-right: 0;
@@ -295,7 +295,7 @@
 .done-done {
     text-decoration: none;
     transition: all 800ms ease-in-out;
-    background: url('/images/icon-check.svg') no-repeat, linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    background: url('../images/icon-check.svg') no-repeat, linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
     background-position: center;
     width: 1rem;
     height: 1rem;
