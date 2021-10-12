@@ -12,6 +12,7 @@ let todo = []
 let total_items = 0
 let doneTodo = []
 let activeTodo = []
+let completedTodo = []
 let diff = []
 let emptySlot = todo.indexOf(null)
 let get_data = -1
@@ -150,9 +151,9 @@ function doneLists() {
                     const ee =  docSel(`.list__${item}`)
                     const tick = docSel(`.done__${item}`)
                     if (ee.disabled) {
-                        
+                        const index = completedTodo.indexOf(item)
                         if (index > -1) {
-                            
+                            completedTodo.splice(index, 1)
                             doneTodo.splice(index, 1)
                             document.querySelector(`.item__${item}`).innerHTML = 
                             `${todo[item]}`
@@ -163,6 +164,7 @@ function doneLists() {
                     } else {
                             document.querySelector(`.item__${item}`).innerHTML = 
                             `<del>${todo[item]}</del>` 
+                            completedTodo.push(item)
                             doneTodo.push(item)
                             updateStatus('done')
                             ee.disabled = true
@@ -201,7 +203,7 @@ function clearAll() {
                 d = doneTodo[i]
                 todo[d] = null
                 document.querySelector(`.list__${doneTodo[i]}`).remove()
-                document.getElementById(`id-${doneTodo[i]}`).remove()
+                
             }
             doneTodo = []
         }
@@ -213,29 +215,34 @@ toggleView()
 function toggleView() {
     all.addEventListener('click', function(){
         for(i in todo){
-            if(docSel(`.list__${i}`).style.height != '3rem') {
-                try {
-                    docSel(`.list__${i}`).style.height = '3rem'
-                } catch (error) {
+            try {
+                if(todo[i] != null && docSel(`.list__${i}`).style.height != '3rem') {
+                docSel(`.list__${i}`).style.height = '3rem'
                 }
-            } 
+            } catch (error) {
+            }
+             
         }
     })
     active.addEventListener('click', function(){
         for(i in todo) {
-            if(docSel(`.list__${i}`).disabled) {
-                docSel(`.list__${i}`).style.height = '0rem'
-            } else {
-                docSel(`.list__${i}`).style.height = '3rem'
-            }
+            if(todo[i] != null ) {
+                if(docSel(`.list__${i}`).disabled) {
+                    docSel(`.list__${i}`).style.height = '0rem'
+                } else {
+                    docSel(`.list__${i}`).style.height = '3rem'
+                }   
+            } 
         }
     })
     completed.addEventListener('click', function(){
         for(i in todo) {
-            if(!docSel(`.list__${i}`).disabled) {
-                docSel(`.list__${i}`).style.height = '0rem'
-            } else {
-                docSel(`.list__${i}`).style.height = '3rem'
+            if(todo[i] != null ) {
+                if(!docSel(`.list__${i}`).disabled) {
+                    docSel(`.list__${i}`).style.height = '0rem'
+                } else {
+                    docSel(`.list__${i}`).style.height = '3rem'
+                }
             }
         }
     })
