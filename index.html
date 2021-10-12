@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header>
+    
+    <div class="banner">
+     
+      <!-- <img src="./images/bg-desktop-dark.jpg" alt=""> -->
+    </div>
+  </header>
+
+  <section class="todo">
+    <div class="todo__head">
+      <h1 class="todo__head__title">TODO</h1>
+      <div class="todo__head__theme" >
+        <a class="todo__head__theme__switch" href="#">
+          <img class="todo__head__theme__switch__img" src="./images/icon-sun.svg" alt="Theme Switch">
+        </a>
+      </div>
+    </div>
+    <div class="todo__create">
+      <a class="create" href="#">
+      <input class="todo__create__input" type="text" placeholder="Create a new Todo...">
+      <span class="todo__create__circle"></span>
+    </a>
+    </div>
+
+    <div class="todo__todos">
+      <div class="draggable__area">
+        
+      </div>
+        <div class="todo__todos__lists status">
+          <p class="status__items">
+            0 Items
+          </p>
+          <a class="status__clear-all" href="#">
+            Clear Completed
+          </a>
+        </div>
+    </div>
+    <div class="todo__toggle">
+      <a class="todo__toggle__all" href="#">All</a>
+      <a class="todo__toggle__active" href="#">Active</a>
+      <a class="todo__toggle__completed" href="#">Completed</a>
+    </div>
+  </section>
+  <!-- Todo -->
+
+  <!-- Add dynamic number --> 
+
+  <!-- All
+  Active 
+  Completed
+ items left
+  Clear Completed
+
+  Drag and drop to reorder list -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+<script src="./app/js/index.js"></script>
+</html>

@@ -1,0 +1,20 @@
+.banner {
+    // display: block;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 12.5rem;
+    background-image: url("../images/bg-mobile-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0;
+   
+ 
+    @include breakpoint-up(large) {
+        height: 18.75rem;
+        background-image: url("../images/bg-desktop-dark.jpg");
+
+    }
+    
+}

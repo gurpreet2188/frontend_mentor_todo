@@ -1,0 +1,316 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    padding-top: 2.5rem;
+    gap: 1.6rem;
+
+    @include breakpoint-up(large) {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &__head {
+        position: relative;
+        flex: .37;
+        order: 0;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: row;
+
+        &__title {
+            flex: 1;
+            order: 0;
+            letter-spacing: .7rem;
+            font-size: 1.6rem;
+            text-align: left;
+            margin-left: 1.4rem;
+            @include breakpoint-up(large) {
+                text-align: left;
+            }
+        }
+    
+        &__theme {
+            flex: 3;
+            position: relative;
+            width: 100%;
+            order: 1;
+            z-index: 10;
+            &__switch{
+                position:absolute;
+                width: 2rem;
+                height: 2rem;
+                margin-left: 10.8rem;
+                margin-top: .4rem;
+
+                @include breakpoint-up(large) {
+                    margin-left: 28rem;
+                }
+            }
+        }
+    }
+
+    &__create {
+            flex: .35;
+            order: 1;
+            position:relative;
+            width: 89%;
+            margin-left: 1.3rem;
+
+            &__circle {
+                position:absolute;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                border:0.13rem solid $darklightGrayishBlue;
+                opacity: .25;
+                margin-left: 1.4rem;
+                top: 25%;
+            }
+
+            &__input {
+                position:absolute;
+                width: 81%;
+                background-color: rgba($color: #000000, $alpha: 0.0);
+                height: 2.8rem;
+               
+                text-decoration: none;
+                border: none;
+                font-size: 0.76rem;
+                color: #fff;
+                margin-left: 3.5rem;
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid $darkdarkGrayishBlue;
+                }
+                &::placeholder {
+                    font-family: 'Josefin Sans', sans-serif;
+                    color: #fff;
+                    opacity: .5;
+                }
+            }
+
+        a {
+            position:absolute;
+            width: 100%;
+            height: 3rem;
+            background-color: $darkveryDarkGrayishBlue2;
+            border-radius: .4rem;
+            text-decoration: none;
+            box-shadow: 0px 0px 1rem .3rem rgba($color: #000000, $alpha: 0.17);
+        }
+    }
+
+    &__todos {
+        flex: 3;
+        order: 3;
+        margin-top: -1rem;
+        background-color: $darkveryDarkGrayishBlue2;
+        width: 89%;
+        min-height: 3rem;
+        border-radius: .5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 2.3rem;
+        margin-left: 1.3rem;
+       
+       
+        &__lists {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            transition: all 300ms ease-in-out;
+            position: relative;
+
+            width: 100%;
+            height: 3rem;
+
+            background-color: $darkveryDarkGrayishBlue2;
+            border-radius: .5rem;
+            border-bottom: .5px solid rgba($color: #000000, $alpha: 0.17);
+        }
+
+       p {
+        flex: 3;
+        order: 2;
+        position:absolute;
+        margin-left: 3rem;
+        margin-top: 1.5rem;
+        font-size: 0.76rem;
+        color: #fff;
+       }
+
+        &__done {
+            flex: 1;
+            order: 1;
+            display: inline-block;
+            text-decoration: none;
+            position:absolute;
+            color: $darklightGrayishBlue;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border:0.13rem solid $darklightGrayishBlue;
+            opacity: .25;
+            margin-top: .9rem;
+            margin-left: 1rem;
+        }
+
+        &__clear {
+            flex: 1;
+            order: 3;
+            position: absolute;
+            background-image: url('/images/icon-cross.svg');
+            background-repeat: no-repeat;
+            margin-left: 18rem;
+            margin-right: 0;
+            margin-top: 1rem;
+            width: 1rem;
+            height: 1rem;
+            @include breakpoint-up(large) {
+                margin-left: 40rem;
+            }
+        }
+    }
+
+    &__toggle {
+        // display: flex;
+        // flex-direction: row;
+        position: relative;
+        // margin-top: 1rem;
+        transition: all 200ms ease-in-out;
+    
+        flex: 1;
+        order: 4;
+        background-color: $darkveryDarkGrayishBlue2;
+        width: 89%;
+        min-height: 3rem;
+        border-radius: .5rem;
+        margin-left: 1.3rem;
+        a {
+            position: absolute;
+            // line-height: 1;
+            // word-spacing: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+            color: #fff;
+            // opacity: .6;
+            // margin-left: 1rem;
+            margin-top: 1.5rem;
+    
+        }
+
+        &__all {
+            margin-left: 4.7rem;
+            opacity: .6;
+            
+        }
+        &__active {
+            margin-left: 7rem;
+            opacity: .6;
+        }
+        &__completed {
+            margin-left: 11rem;
+            opacity: .6;
+        }
+
+        @include breakpoint-up(large) {
+            &__all {
+                margin-left: 14.7rem;
+                opacity: .6;
+                
+            }
+            &__active {
+                margin-left: 17rem;
+                opacity: .6;
+            }
+            &__completed {
+                margin-left: 21rem;
+                opacity: .6;
+            }
+        }
+    
+       
+    }
+}
+
+.status {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    &__items {
+        flex:1;
+        order:1;
+        width: 100%;
+        position: absolute;
+    }
+
+    &__clear-all {
+        flex:1;
+        order:2;
+        width: 100%;
+        position: absolute;
+    }
+
+    p {
+        flex: 3;
+        order: 2;
+        position:absolute;
+        margin-left:1rem;
+        margin-top: 1.5rem;
+        font-size: 0.6rem;
+        color: #fff;
+        opacity: .7;
+        @include breakpoint-up(large) {
+            font-size: 0.75rem;
+        }
+       }
+       
+
+    a {
+        font-size: 0.7rem;
+        color: #fff;
+        opacity: .7;
+        text-decoration: none;
+        margin-top: 1.5rem;
+        margin-left: 14rem;
+        @include breakpoint-up(large) {
+            margin-top: 1.6rem;
+            margin-left: 36rem;
+        }
+    }
+}
+
+.done-done {
+    text-decoration: none;
+    transition: all 800ms ease-in-out;
+    background: url('/images/icon-check.svg') no-repeat, linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    background-position: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border:0.13rem solid rgba($color: #000000, $alpha: .5);
+    opacity: 1;
+    margin-top: .9rem;
+    margin-left: 1rem;
+}
+
+.selected {
+    a {
+        opacity: .5;
+    }
+    
+}
+
+
