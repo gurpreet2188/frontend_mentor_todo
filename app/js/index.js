@@ -150,9 +150,9 @@ function doneLists() {
                     const ee =  docSel(`.list__${item}`)
                     const tick = docSel(`.done__${item}`)
                     if (ee.disabled) {
-                        // const index = completedTodo.indexOf(item)
+                        
                         if (index > -1) {
-                            // completedTodo.splice(index, 1)
+                            
                             doneTodo.splice(index, 1)
                             document.querySelector(`.item__${item}`).innerHTML = 
                             `${todo[item]}`
@@ -163,7 +163,6 @@ function doneLists() {
                     } else {
                             document.querySelector(`.item__${item}`).innerHTML = 
                             `<del>${todo[item]}</del>` 
-                            // completedTodo.push(item)
                             doneTodo.push(item)
                             updateStatus('done')
                             ee.disabled = true
@@ -242,19 +241,7 @@ function toggleView() {
     })
 }
 
-// function listDiff() {
-//     for(i in todo) {
-//         if(done[i] != todo.length){
-//             diff.push()
-//         }
-
-//     }
-// }
-
 clearAll()
 doneLists()
 clearLists()
 
-//  assign deactive to checked
-//  check if class of list has deactive
-//  
